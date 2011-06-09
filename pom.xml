@@ -2,15 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <groupId>pl.softwaremill</groupId>
     <artifactId>arq-testng-test</artifactId>
     <packaging>jar</packaging>
     <name>Arquillian testng test</name>
-
-    <parent>
-        <groupId>pl.softwaremill.common</groupId>
-        <artifactId>softwaremill-parent</artifactId>
-        <version>48-SNAPSHOT</version>
-    </parent>
+    <version>1</version>
 
     <!-- Common dependencies -->
     <dependencies>
@@ -18,6 +14,7 @@
         <dependency>
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
+            <version>1.0-SP3</version>
         </dependency>
 
         <!-- JEE -->
@@ -25,16 +22,7 @@
             <groupId>org.jboss.spec</groupId>
             <artifactId>jboss-javaee-6.0</artifactId>
             <type>pom</type>
-        </dependency>
-
-        <!-- Logging -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.0.0.Final</version>
         </dependency>
 
         <!-- Testing -->
@@ -42,36 +30,19 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.easytesting</groupId>
-            <artifactId>fest-assert</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- Validator -->
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
+            <version>5.12.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.jboss.logging</groupId>
             <artifactId>jboss-logging</artifactId>
+            <version>3.0.0.Beta4</version>
         </dependency>
 
         <dependency>
             <groupId>org.jboss.weld</groupId>
             <artifactId>weld-core</artifactId>
+            <version>1.1.0.CR3</version>
         </dependency>
         <dependency>
             <groupId>org.jboss.weld.se</groupId>
@@ -93,16 +64,19 @@
                     <groupId>org.jboss.arquillian</groupId>
                     <artifactId>arquillian-testng</artifactId>
                     <scope>test</scope>
+                    <version>1.0.0.Alpha4</version>
                 </dependency>
                 <dependency>
                     <groupId>org.jboss.weld.arquillian.container</groupId>
                     <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
                     <scope>test</scope>
+                    <version>1.1.0.CR3</version>
                 </dependency>
                 <dependency>
                     <groupId>org.jboss.weld</groupId>
                     <artifactId>weld-core</artifactId>
                     <scope>test</scope>
+                    <version>1.1.0.CR3</version>
                 </dependency>
             </dependencies>
         </profile>
@@ -122,31 +96,18 @@
 
     <repositories>
         <repository>
-            <id>softwaremill-jbison-repository</id>
-            <name>Softwaremill JBison Repository Group</name>
-            <url>http://tools.softwaremill.pl/nexus/content/groups/jbison-repos/</url>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Maven Repository Group</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
             <layout>default</layout>
             <releases>
                 <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
             </releases>
             <snapshots>
                 <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
             </snapshots>
         </repository>
     </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>softwaremill-jbison-repository</id>
-            <name>Softwaremill JBison Repository Group</name>
-            <url>http://tools.softwaremill.pl/nexus/content/groups/jbison-repos/</url>
-            <layout>default</layout>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 </project>
